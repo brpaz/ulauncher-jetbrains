@@ -32,7 +32,7 @@ class RecentProjectsParser(object):
                 '$USER_HOME$', os.path.expanduser('~'))
             project_name = os.path.basename(project_path)
 
-            if query and query not in project_name:
+            if query and query.lower() not in project_name.lower():
                 continue
 
             result.append({
