@@ -28,7 +28,8 @@ class JetbrainsLauncherExtension(Extension):
     def get_recent_projects_file_path(self, keyword: str):
         """ Returns the file path where the recent projects are stored """
         ides = ['pstorm', 'webstorm', 'pycharm', 'intellij']
-        switcher = {self.preferences.get(f"{ide}_keyword"): f"{ide}_projects_file" for ide in ides}
+        switcher = {self.preferences.get(f"{ide}_keyword"): self.preferences.get(f"{ide}_projects_file") for ide in ides}
+        print(switcher)
         return os.path.expanduser(switcher.get(keyword, ""))
 
     @staticmethod
