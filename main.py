@@ -74,7 +74,7 @@ class KeywordQueryEventListener(EventListener):
                 icon=extension.get_icon(keyword),
                 name=project['name'],
                 description=project['path'],
-                on_enter=RunScriptAction('%s %s &' % (
+                on_enter=RunScriptAction('%s "%s" &' % (
                     extension.get_launcher_file(keyword), project['path']), []),
                 on_alt_enter=CopyToClipboardAction(project['path'])
             ))
