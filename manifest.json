@@ -2,7 +2,7 @@
   "required_api_version": "^2.0.0",
   "name": "jetbrains",
   "description": "Open your recent projects from Jetbrains IDEs",
-  "developer_name": "Bruno Paz",
+  "developer_name": "Gerard Finol",
   "icon": "images/icon.png",
   "options": {
     "query_debounce": 0.1
