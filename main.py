@@ -32,7 +32,7 @@ class JetbrainsLauncherExtension(Extension):
 
     def get_recent_projects_file_path(self, keyword: str):
         """ Returns the file path where the recent projects are stored """
-        return os.path.expanduser(self.projects_file_switcher.get(keyword))
+        return os.path.expanduser(self.projects_file_switcher.get(keyword, ""))
 
     @staticmethod
     def get_icon(keyword):
