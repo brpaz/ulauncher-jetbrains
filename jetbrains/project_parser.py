@@ -6,7 +6,7 @@ import os
 import xml.etree.ElementTree as ET
 
 
-class RecentProjectsParser(object):
+class RecentProjectsParser:
     """ Processes the "Recent projects" file from Jetbrains IDEs """
 
     @staticmethod
