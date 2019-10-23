@@ -24,13 +24,15 @@ class JetbrainsLauncherExtension(Extension):
         """ Initializes the extension """
         super(JetbrainsLauncherExtension, self).__init__()
         self.subscribe(KeywordQueryEvent, KeywordQueryEventListener())
+        ides = ['pstorm', 'webstorm', 'pycharm', 'intellij']
+        self.projects_file_switcher = {self.preferences.get(f"{ide}_keyword"): self.preferences.get(f"{ide}_projects_file")
+                                       for ide in ides}
+        self.launch_script_switcher = {self.preferences.get(f"{ide}_keyword"): self.preferences.get(f"{ide}_launch_script")
+                                       for ide in ides}
 
     def get_recent_projects_file_path(self, keyword: str):
         """ Returns the file path where the recent projects are stored """
-        ides = ['pstorm', 'webstorm', 'pycharm', 'intellij']
-        switcher = {self.preferences.get(f"{ide}_keyword"): self.preferences.get(f"{ide}_projects_file") for ide in ides}
-        print(switcher)
-        return os.path.expanduser(switcher.get(keyword, ""))
+        return os.path.expanduser(self.projects_file_switcher.get(keyword))
 
     @staticmethod
     def get_icon(keyword):
@@ -41,8 +43,7 @@ class JetbrainsLauncherExtension(Extension):
 
     def get_launcher_file(self, keyword):
         """ Returns the launcher file from preferences"""
-        return os.path.expanduser(
-            self.preferences.get("%s_launch_script" % keyword))
+        return os.path.expanduser(self.launch_script_switcher.get(keyword))
 
 
 class KeywordQueryEventListener(EventListener):
