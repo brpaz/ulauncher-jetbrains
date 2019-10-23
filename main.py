@@ -25,15 +25,14 @@ class JetbrainsLauncherExtension(Extension):
         super(JetbrainsLauncherExtension, self).__init__()
         self.subscribe(KeywordQueryEvent, KeywordQueryEventListener())
 
-    def get_recent_projects_file_path(self, keyword):
+    def get_recent_projects_file_path(self, keyword: str):
         """ Returns the file path where the recent projects are stored """
-        if keyword in ['pstorm', 'webstorm', 'pycharm', 'intellij']:
-            return os.path.expanduser(
-                self.preferences.get("%s_projects_file" % keyword))
+        ides = ['pstorm', 'webstorm', 'pycharm', 'intellij']
+        switcher = {self.preferences.get(f"{ide}_keyword"): f"{ide}_projects_file" for ide in ides}
+        return os.path.expanduser(switcher.get(keyword, ""))
 
-        raise AttributeError("Invalid keyword detected")
-
-    def get_icon(self, keyword):
+    @staticmethod
+    def get_icon(keyword):
         """ Returns the application icon based on the keyword """
         icon_path = os.path.join('images', "%s.png" % keyword)
 
@@ -48,8 +47,8 @@ class JetbrainsLauncherExtension(Extension):
 class KeywordQueryEventListener(EventListener):
     """ Listener that handles the user input """
 
-    # pylint: disable=unused-argument,no-self-use
-    def on_event(self, event, extension):
+    @staticmethod
+    def on_event(event, extension):
         """ Handles the event """
         items = []
 
