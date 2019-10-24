@@ -69,7 +69,7 @@
       "type": "input",
       "name": "PyCharm launcher script path",
       "description": "The location of the PyCharm launch script file",
-      "default_value": "/usr/local/bin/pycharm"
+      "default_value": "/usr/local/bin/charm"
     },
     {
       "id": "intellij_keyword",
@@ -90,7 +90,7 @@
       "type": "input",
       "name": "IntelliJ launcher script path",
       "description": "The location of the IntelliJ launch script file",
-      "default_value": "/usr/local/bin/intellij"
+      "default_value": "/usr/local/bin/idea"
     }
   ]
 }
