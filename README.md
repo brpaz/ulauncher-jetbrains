@@ -71,7 +71,7 @@ All contributions are welcome.
 
 ## License 
 
-Copywright @ 2019 [Bruno Paz](https://github.com/brpaz)
+Copyright @ 2019 [Bruno Paz](https://github.com/brpaz)
 
 This project is [MIT](LICENSE) Licensed.
 
