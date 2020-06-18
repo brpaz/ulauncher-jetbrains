@@ -195,7 +195,7 @@
       "type": "input",
       "name": "AndroidStudio launcher script path",
       "description": "The location of the AndroidStudio launch script file",
-      "default_value": "/usr/local/bin/androidstudio"
+      "default_value": "/usr/local/bin/studio"
     }
   ]
 }
