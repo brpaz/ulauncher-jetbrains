@@ -31,10 +31,10 @@ The following Jetbrains IDEs are supported:
 * PHPStorm
 * WebStorm
 * PyCharm
-* InteliJ
+* IntelliJ Idea
 * GoLand
 * CLion
-* AndroidStudio
+* Android Studio
 * Rider
 * RubyMine
 
