@@ -76,7 +76,7 @@
       "type": "keyword",
       "name": "IntelliJ Projects",
       "description": "Open Project in Intelij",
-      "default_value": "intellij"
+      "default_value": "idea"
     },
     {
       "id": "intellij_projects_file",
@@ -181,7 +181,7 @@
       "type": "keyword",
       "name": "AndroidStudio Projects",
       "description": "Open Project in AndroidStudio",
-      "default_value": "androidstudio"
+      "default_value": "studio"
     },
     {
       "id": "androidstudio_projects_file",
