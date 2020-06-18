@@ -27,7 +27,7 @@
       "type": "input",
       "name": "PHPStorm launcher script path",
       "description": "The location of the PHPStorm launch script file",
-      "default_value": "/usr/local/bin/pstorm"
+      "default_value": "pstorm"
     },
     {
       "id": "webstorm_keyword",
@@ -48,7 +48,7 @@
       "type": "input",
       "name": "Webstorm launcher script path",
       "description": "The location of the Webstorm launch script file",
-      "default_value": "/usr/local/bin/webstorm"
+      "default_value": "webstorm"
     },
     {
       "id": "pycharm_keyword",
@@ -69,7 +69,7 @@
       "type": "input",
       "name": "PyCharm launcher script path",
       "description": "The location of the PyCharm launch script file",
-      "default_value": "/usr/local/bin/pycharm"
+      "default_value": "pycharm"
     },
     {
       "id": "intellij_keyword",
@@ -90,7 +90,7 @@
       "type": "input",
       "name": "IntelliJ launcher script path",
       "description": "The location of the IntelliJ launch script file",
-      "default_value": "/usr/local/bin/intellij"
+      "default_value": "idea"
     },
     {
       "id": "goland_keyword",
@@ -111,7 +111,7 @@
       "type": "input",
       "name": "GoLand launcher script path",
       "description": "The location of the GoLand launch script file",
-      "default_value": "/usr/local/bin/goland"
+      "default_value": "goland"
     },
     {
       "id": "clion_keyword",
@@ -132,7 +132,7 @@
       "type": "input",
       "name": "CLion launcher script path",
       "description": "The location of the CLion launch script file",
-      "default_value": "/usr/local/bin/clion"
+      "default_value": "clion"
     },
     {
       "id": "rider_keyword",
@@ -153,7 +153,7 @@
       "type": "input",
       "name": "Rider launcher script path",
       "description": "The location of the Rider launch script file",
-      "default_value": "/usr/local/bin/rider"
+      "default_value": "rider"
     },
     {
       "id": "rubymine_keyword",
@@ -174,7 +174,7 @@
       "type": "input",
       "name": "RubyMine launcher script path",
       "description": "The location of the RubyMine launch script file",
-      "default_value": "/usr/local/bin/rubymine"
+      "default_value": "rubymine"
     },
     {
       "id": "androidstudio_keyword",
@@ -195,7 +195,7 @@
       "type": "input",
       "name": "AndroidStudio launcher script path",
       "description": "The location of the AndroidStudio launch script file",
-      "default_value": "/usr/local/bin/studio"
+      "default_value": "studio"
     }
   ]
 }
