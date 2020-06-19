@@ -31,7 +31,7 @@ The following Jetbrains IDEs are supported:
 * PHPStorm
 * WebStorm
 * PyCharm
-* IntelliJ Idea
+* IntelliJ IDEA
 * GoLand
 * CLion
 * Android Studio
