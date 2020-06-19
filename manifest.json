@@ -72,21 +72,21 @@
       "default_value": "pycharm"
     },
     {
-      "id": "intellij_keyword",
+      "id": "idea_keyword",
       "type": "keyword",
       "name": "IntelliJ IDEA Projects",
       "description": "Open Project in IntelliJ IDEA",
       "default_value": "idea"
     },
     {
-      "id": "intellij_projects_file",
+      "id": "idea_projects_file",
       "type": "input",
       "name": "Open Project in IntelliJ IDEA",
       "description": "The path to the location of the recent files in IntelliJ IDEA",
       "default_value": "~/.IntelliJIdea2019.3/config/options/recentProjects.xml"
     },
     {
-      "id": "intellij_launch_script",
+      "id": "idea_launch_script",
       "type": "input",
       "name": "IntelliJ IDEA launcher script path",
       "description": "The location of the IntelliJ IDEA launch script file",
@@ -177,21 +177,21 @@
       "default_value": "rubymine"
     },
     {
-      "id": "androidstudio_keyword",
+      "id": "studio_keyword",
       "type": "keyword",
       "name": "Android Studio Projects",
       "description": "Open Project in Android Studio",
       "default_value": "studio"
     },
     {
-      "id": "androidstudio_projects_file",
+      "id": "studio_projects_file",
       "type": "input",
       "name": "Open Project in Android Studio",
       "description": "The path to the location of the recent files in Android Studio",
       "default_value": "~/.AndroidStudio3.5/config/options/recentProjects.xml"
     },
     {
-      "id": "androidstudio_launch_script",
+      "id": "studio_launch_script",
       "type": "input",
       "name": "Android Studio launcher script path",
       "description": "The location of the Android Studio launch script file",
