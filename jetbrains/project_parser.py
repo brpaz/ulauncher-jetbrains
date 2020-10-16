@@ -28,9 +28,16 @@ class RecentProjectsParser():
             './/component[@name="RecentDirectoryProjectsManager"][1]/option[@name="recentPaths"]/list/option'
         )
 
+        attr = "value"
+        if (recent_projects.__len__() == 0):
+            recent_projects = root.findall(
+                './/component[@name="RecentProjectsManager"][1]/option[@name="additionalInfo"]/map/entry'
+            )
+            attr = "key"
+
         result = []
         for project in recent_projects:
-            project_path = project.attrib["value"].replace(
+            project_path = project.attrib[attr].replace(
                 '$USER_HOME$', os.path.expanduser('~'))
             project_name = os.path.basename(project_path)
             icons = glob.glob(os.path.join(project_path, '.idea', 'icon.*'))
@@ -45,3 +52,4 @@ class RecentProjectsParser():
             })
 
         return result[:8]
+        
