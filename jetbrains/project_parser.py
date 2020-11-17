@@ -52,4 +52,3 @@ class RecentProjectsParser():
             })
 
         return result[:8]
-        
