@@ -27,7 +27,7 @@
       "type": "input",
       "name": "PHPStorm launcher script path",
       "description": "The location of the PHPStorm launch script file",
-      "default_value": "/usr/local/bin/pstorm"
+      "default_value": "pstorm"
     },
     {
       "id": "webstorm_keyword",
@@ -48,7 +48,7 @@
       "type": "input",
       "name": "Webstorm launcher script path",
       "description": "The location of the Webstorm launch script file",
-      "default_value": "/usr/local/bin/webstorm"
+      "default_value": "webstorm"
     },
     {
       "id": "pycharm_keyword",
@@ -69,28 +69,28 @@
       "type": "input",
       "name": "PyCharm launcher script path",
       "description": "The location of the PyCharm launch script file",
-      "default_value": "/usr/local/bin/pycharm"
+      "default_value": "pycharm"
     },
     {
-      "id": "intellij_keyword",
+      "id": "idea_keyword",
       "type": "keyword",
-      "name": "IntelliJ Projects",
-      "description": "Open Project in Intelij",
-      "default_value": "intellij"
+      "name": "IntelliJ IDEA Projects",
+      "description": "Open Project in IntelliJ IDEA",
+      "default_value": "idea"
     },
     {
-      "id": "intellij_projects_file",
+      "id": "idea_projects_file",
       "type": "input",
-      "name": "Open Project in IntelliJ",
-      "description": "The path to the location of the recent files in IntelliJ",
+      "name": "Open Project in IntelliJ IDEA",
+      "description": "The path to the location of the recent files in IntelliJ IDEA",
       "default_value": "~/.IntelliJIdea2019.3/config/options/recentProjects.xml"
     },
     {
-      "id": "intellij_launch_script",
+      "id": "idea_launch_script",
       "type": "input",
-      "name": "IntelliJ launcher script path",
-      "description": "The location of the IntelliJ launch script file",
-      "default_value": "/usr/local/bin/intellij"
+      "name": "IntelliJ IDEA launcher script path",
+      "description": "The location of the IntelliJ IDEA launch script file",
+      "default_value": "idea"
     },
     {
       "id": "goland_keyword",
@@ -111,7 +111,7 @@
       "type": "input",
       "name": "GoLand launcher script path",
       "description": "The location of the GoLand launch script file",
-      "default_value": "/usr/local/bin/goland"
+      "default_value": "goland"
     },
     {
       "id": "clion_keyword",
@@ -132,7 +132,7 @@
       "type": "input",
       "name": "CLion launcher script path",
       "description": "The location of the CLion launch script file",
-      "default_value": "/usr/local/bin/clion"
+      "default_value": "clion"
     },
     {
       "id": "rider_keyword",
@@ -153,7 +153,7 @@
       "type": "input",
       "name": "Rider launcher script path",
       "description": "The location of the Rider launch script file",
-      "default_value": "/usr/local/bin/rider"
+      "default_value": "rider"
     },
     {
       "id": "rubymine_keyword",
@@ -174,28 +174,28 @@
       "type": "input",
       "name": "RubyMine launcher script path",
       "description": "The location of the RubyMine launch script file",
-      "default_value": "/usr/local/bin/rubymine"
+      "default_value": "rubymine"
     },
     {
-      "id": "androidstudio_keyword",
+      "id": "studio_keyword",
       "type": "keyword",
-      "name": "AndroidStudio Projects",
-      "description": "Open Project in AndroidStudio",
-      "default_value": "androidstudio"
+      "name": "Android Studio Projects",
+      "description": "Open Project in Android Studio",
+      "default_value": "studio"
     },
     {
-      "id": "androidstudio_projects_file",
+      "id": "studio_projects_file",
       "type": "input",
-      "name": "Open Project in AndroidStudio",
-      "description": "The path to the location of the recent files in AndroidStudio",
+      "name": "Open Project in Android Studio",
+      "description": "The path to the location of the recent files in Android Studio",
       "default_value": "~/.AndroidStudio3.5/config/options/recentProjects.xml"
     },
     {
-      "id": "androidstudio_launch_script",
+      "id": "studio_launch_script",
       "type": "input",
-      "name": "AndroidStudio launcher script path",
-      "description": "The location of the AndroidStudio launch script file",
-      "default_value": "/usr/local/bin/androidstudio"
+      "name": "Android Studio launcher script path",
+      "description": "The location of the Android Studio launch script file",
+      "default_value": "studio"
     }
   ]
 }

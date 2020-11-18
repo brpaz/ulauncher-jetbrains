@@ -9,9 +9,8 @@ from ulauncher.api.shared.action.CopyToClipboardAction import CopyToClipboardAct
 from ulauncher.api.shared.action.HideWindowAction import HideWindowAction
 from ulauncher.api.shared.action.RenderResultListAction import RenderResultListAction
 from ulauncher.api.shared.action.RunScriptAction import RunScriptAction
-from ulauncher.api.shared.event import KeywordQueryEvent
 from ulauncher.api.shared.item.ExtensionResultItem import ExtensionResultItem
-
+from ulauncher.api.shared.event import KeywordQueryEvent
 from jetbrains.project_parser import RecentProjectsParser
 
 
@@ -26,8 +25,8 @@ class JetbrainsLauncherExtension(Extension):
         """ Return the value of the preference for the specific IDE """
         preference = None
         for ide in [
-                'pstorm', 'webstorm', 'pycharm', 'intellij', 'goland', 'clion',
-                'rider', 'rubymine', 'androidstudio'
+                'pstorm', 'webstorm', 'pycharm', 'idea', 'goland', 'clion',
+                'rider', 'rubymine', 'studio'
         ]:
             if keyword == self.preferences.get('%s_keyword' % ide):
                 preference = self.preferences.get(ide + preference_part)
@@ -44,8 +43,8 @@ class JetbrainsLauncherExtension(Extension):
         """ Returns the application icon based on the keyword """
         icon_path = None
         for ide in [
-                'pstorm', 'webstorm', 'pycharm', 'intellij', 'goland', 'clion',
-                'rider', 'rubymine', 'androidstudio'
+                'pstorm', 'webstorm', 'pycharm', 'idea', 'goland', 'clion',
+                'rider', 'rubymine', 'studio'
         ]:
             if keyword == self.preferences.get('%s_keyword' % ide):
                 icon_path = os.path.join('images', "%s.png" % ide)

@@ -2,14 +2,14 @@
 EXT_NAME:=com.github.brpaz.ulauncher-jetbrains
 EXT_DIR:=$(shell pwd)
 
-.PHONY: help lint format link unlink deps dev
-.DEFAULT_TARGET: help
+.PHONY: help lint format link unlink deps dev setup
+.DEFAULT_GOAL := help
 
-help: ## Show help menu
-	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
+setup: ## Setups the project
+	pre-commit install
 
-lint: ## Run Pylint
-	flake8 .
+lint: ## Run Lint
+	@flake8 --ignore=E251
 
 format: ## Format code using yapf
 	@yapf --in-place --recursive .
@@ -24,4 +24,7 @@ deps: ## Install Python Dependencies
 	@pip install -r requirements.txt
 
 dev: ## Runs ulauncher on development mode
-	ulauncher --no-extensions --dev -v
+	ulauncher -v --dev --no-extensions  |& grep "${EXT_NAME}"
+
+help: ## Show help menu
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
