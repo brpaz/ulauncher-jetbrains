@@ -27,10 +27,16 @@ class RecentProjectsParser():
             './/component[@name="RecentDirectoryProjectsManager"][1]/option[@name="recentPaths"]/list/option'
         )
 
+        useKeyAttribute = False
+
+        if len(recent_projects) == 0:
+            recent_projects = root.findall('.//entry')
+            useKeyAttribute = True
+
         result = []
         for project in recent_projects:
             project_title = ''
-            project_path = project.attrib["value"].replace(
+            project_path = project.attrib["key" if useKeyAttribute else "value"].replace(
                 '$USER_HOME$', os.path.expanduser('~'))
             name_file = project_path + '/.idea/.name'
 
