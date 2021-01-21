@@ -21,16 +21,31 @@ class RecentProjectsParser():
 
         root = ET.parse(file_path).getroot()
 
-        recent_projects = root.findall(
-            './/component[@name="RecentProjectsManager"][1]/option[@name="recentPaths"]/list/option'
-        ) + root.findall(
-            './/component[@name="RecentDirectoryProjectsManager"][1]/option[@name="recentPaths"]/list/option'
-        )
+        recent_projects_paths_node = root.find('.//component[@name="RecentProjectsManager"][1]/option[@name="recentPaths"]')
+        recent_directory_projects_paths_node = root.find('.//component[@name="RecentDirectoryProjectsManager"][1]/option[@name="recentPaths"]')
+
+        if recent_projects_paths_node is None and recent_directory_projects_paths_node is None:
+            recent_projects = root.findall(
+                './/component[@name="RecentProjectsManager"][1]/option[@name="additionalInfo"]/map/entry'
+            ) + root.findall(
+                './/component[@name="RecentDirectoryProjectsManager"][1]/option[@name="additionalInfo"]/map/entry'
+            )
+
+            recent_project_paths = [ project.attrib["key"] for project in recent_projects ]
+        else:
+            recent_projects = root.findall(
+                './/component[@name="RecentProjectsManager"][1]/option[@name="recentPaths"]/list/option'
+            ) + root.findall(
+                './/component[@name="RecentDirectoryProjectsManager"][1]/option[@name="recentPaths"]/list/option'
+            )
+
+            recent_project_paths = [ project.attrib["value"] for project in recent_projects ]
 
         result = []
-        for project in recent_projects:
+
+        for recent_project_path in recent_project_paths:
             project_title = ''
-            project_path = project.attrib["value"].replace(
+            project_path = recent_project_path.replace(
                 '$USER_HOME$', os.path.expanduser('~'))
             name_file = project_path + '/.idea/.name'
 
