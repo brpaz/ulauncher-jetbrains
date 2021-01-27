@@ -25,12 +25,18 @@ class RecentProjectsParser():
             './/component[@name="RecentProjectsManager"][1]/option[@name="recentPaths"]/list/option'
         ) + root.findall(
             './/component[@name="RecentDirectoryProjectsManager"][1]/option[@name="recentPaths"]/list/option'
+        ) + root.findall(  # projects in groups in products version 2020.3+
+            './/component[@name="RecentProjectsManager"][1]/option[@name="groups"]/list/ProjectGroup/option'
+            '[@name="projects"]/list/option'
+        ) + root.findall(  # recent projects in products version 2020.3+
+            './/component[@name="RecentProjectsManager"][1]/option[@name="additionalInfo"]/map/entry'
         )
 
         result = []
+        already_matched = []
         for project in recent_projects:
             project_title = ''
-            project_path = project.attrib["value"].replace(
+            project_path = (project.attrib['value' if 'value' in project.attrib else 'key']).replace(
                 '$USER_HOME$', os.path.expanduser('~'))
             name_file = project_path + '/.idea/.name'
 
@@ -44,6 +50,13 @@ class RecentProjectsParser():
             if query and query.lower() not in project_name.lower(
             ) and query.lower() not in project_title.lower():
                 continue
+
+            # prevent duplicate results, because from version 2020.3, a project can appear more than once in the XML
+            # (in the option[@name="groups"] section and in the option[@name="additionalInfo"] section)
+            if project_path in already_matched:
+                continue
+
+            already_matched.append(project_path)
 
             result.append({
                 'name': project_title or project_name,
