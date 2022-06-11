@@ -34,6 +34,7 @@ class RecentProjectsParser():
 
         result = []
         already_matched = []
+        recent_projects.reverse()
         for project in recent_projects:
             project_title = ''
             project_path = (project.attrib['value' if 'value' in project.attrib else 'key']).replace(
